@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/image/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/output.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <title>Sneakers Shop | By Meetesh Saini</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="p-6 md:px-8 md:py-0 max-w-screen-xl mx-auto">
+        <div class="container mx-auto flex items-center justify-between md:justify-start">
+            <!-- Left side: Hamburger + Logo -->
+            <div class="flex items-center space-x-4">
+                <!-- Hamburger Menu (Visible on small screens) -->
+                <button id="menu-toggle" class="focus:outline-none md:hidden">
+                    <img src="assets/image/icon-menu.svg" alt="Menu button">
+                </button>
+                <!-- Logo -->
+                <img src="assets/image/logo.svg" alt="Sneakers Logo">
+            </div>
+
+            <!-- Right side: Profile Icon -->
+            <div class="md:hidden flex items-center gap-4 relative">
+                <button class="btn-cart relative">
+                    <img src="assets/image/icon-cart.svg" alt="Cart">
+                    <span
+                        class="cart-display absolute bg-primary font-bold text-neutral-white text-xs px-2 rounded-lg -top-1.5 empty:hidden"></span>
+                </button>
+                <button class="border-2 border-transparent hover:border-primary rounded-full">
+                    <img src="assets/image/image-avatar.png" alt="Profile" class="w-6 h-6 rounded-full">
+                </button>
+
+                <!-- Cart Modal -->
+                <div
+                    class="cart-modal hidden absolute -right-3 z-40 ml-4 top-14 w-[calc(100vw-1.5rem)] max-w-[22rem] bg-neutral-white shadow-2xl rounded-lg p-4">
+                    <h3 class="font-bold">Cart</h3>
+                    <hr class="bg-neutral-1 mt-6" />
+                    <div class="cart-empty flex items-center justify-center h-52">
+                        <p class="text-neutral-1 mt-2 font-bold">Your cart is empty.</p>
+                    </div>
+                    <div class="cart-filled hidden mt-6 gap-2 items-center justify-between">
+                        <img class="size-12 rounded" src="assets/image/image-product-1-thumbnail.jpg"
+                            alt="Fall Limited Edition Sneakers">
+                        <div class="text-neutral-1">
+                            <p>Fall Limited Edition Sneakers</p>
+                            <p>$125.00 x <span class="cart-display"></span> <span
+                                    class="cart-totalAmount font-bold text-neutral-0"></span></p>
+                        </div>
+                        <button class="btn-cart-delete size-8 text-neutral-2 hover:text-neutral-1">
+                            <!-- Delete icon -->
+                            <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <path
+                                        d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                                        id="a" />
+                                </defs>
+                                <use fill="currentColor" fill-rule="nonzero" xlink:href="#a" />
+                            </svg>
+                        </button>
+                    </div>
+                    <button
+                        class="hidden btn-checkout bg-primary rounded w-full py-3 font-bold text-neutral-0 mt-6 hover:bg-primary-light">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Items (Hidden on small screens, visible on large screens) -->
+            <div class="hidden md:flex md:flex-grow md:items-center md:justify-between md:ml-6">
+                <!-- Left side: Menu links -->
+                <div class="lg:ml-8 flex items-center space-x-8">
+                    <a href="#"
+                        class="text-neutral-1 hover:text-neutral-0 md:py-8 hover:border-b-primary border-b-4 border-transparent">Collections</a>
+                    <a href="#"
+                        class="text-neutral-1 hover:text-neutral-0 md:py-8 hover:border-b-primary border-b-4 border-transparent">Men</a>
+                    <a href="#"
+                        class="text-neutral-1 hover:text-neutral-0 md:py-8 hover:border-b-primary border-b-4 border-transparent">Women</a>
+                    <a href="#"
+                        class="text-neutral-1 hover:text-neutral-0 md:py-8 hover:border-b-primary border-b-4 border-transparent">About</a>
+                    <a href="#"
+                        class="text-neutral-1 hover:text-neutral-0 md:py-8 hover:border-b-primary border-b-4 border-transparent">Contact</a>
+                </div>
+
+                <!-- Right side: Profile Icon -->
+                <div class="flex items-center gap-10 relative">
+                    <button class="btn-cart relative">
+                        <img src="assets/image/icon-cart.svg" alt="Cart">
+                        <span
+                            class="cart-display absolute bg-primary font-bold text-neutral-white text-xs px-2 rounded-lg -top-1.5 empty:hidden"></span>
+                    </button>
+                    <button class="border-2 border-transparent hover:border-primary rounded-full">
+                        <img src="assets/image/image-avatar.png" alt="Profile" class="w-12 h-12 rounded-full">
+                    </button>
+
+                    <!-- Cart Modal -->
+                    <div
+                        class="cart-modal hidden absolute -right-3 z-40 ml-4 top-14 w-[calc(100vw-1.5rem)] max-w-[22rem] bg-neutral-white shadow-2xl rounded-lg p-4">
+                        <h3 class="font-bold">Cart</h3>
+                        <hr class="bg-neutral-1 mt-6" />
+                        <div class="cart-empty flex items-center justify-center h-52">
+                            <p class="text-neutral-1 mt-2 font-bold">Your cart is empty.</p>
+                        </div>
+                        <div class="cart-filled hidden mt-6 gap-2 items-center justify-between">
+                            <img class="size-12 rounded" src="assets/image/image-product-1-thumbnail.jpg"
+                                alt="Fall Limited Edition Sneakers">
+                            <div class="text-neutral-1">
+                                <p>Fall Limited Edition Sneakers</p>
+                                <p>$125.00 x <span class="cart-display">3</span> <span
+                                        class="cart-totalAmount font-bold text-neutral-0">$375.00</span></p>
+                            </div>
+                            <button class="btn-cart-delete size-8 text-neutral-2 hover:text-neutral-1">
+                                <!-- Delete icon -->
+                                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z"
+                                            id="a" />
+                                    </defs>
+                                    <use fill="currentColor" fill-rule="nonzero" xlink:href="#a" />
+                                </svg>
+                            </button>
+                        </div>
+                        <button
+                            class="hidden btn-checkout bg-primary rounded w-full py-3 font-bold text-neutral-0 mt-6 hover:bg-primary-light">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="hidden md:block bg-neutral-2 max-w-screen-xl mx-auto" />
+
+        <!-- Full-Height Dropdown Menu (Visible on small screens) -->
+        <div id="dropdown"
+            class="fixed top-0 left-0 w-60 h-full bg-neutral-white text-neutral-0 p-6 transform -translate-x-full md:hidden z-50">
+            <button id="menu-close" class="text-neutral-1 focus:outline-none mb-8">
+                <!-- Cross Icon -->
+                <img src="assets/image/icon-close.svg" alt="Close button">
+            </button>
+            <nav class="font-bold space-y-1 text-[1.1rem]">
+                <a href="#" class="block hover:bg-neutral-3 p-2 rounded">Collections</a>
+                <a href="#" class="block hover:bg-neutral-3 p-2 rounded">Men</a>
+                <a href="#" class="block hover:bg-neutral-3 p-2 rounded">Women</a>
+                <a href="#" class="block hover:bg-neutral-3 p-2 rounded">About</a>
+                <a href="#" class="block hover:bg-neutral-3 p-2 rounded">Contact</a>
+            </nav>
+        </div>
+
+
+        <!-- Background Overlay (hidden initially) -->
+        <div id="overlay" class="fixed inset-0 bg-neutral-black hidden z-40 md:hidden"></div>
+    </nav>
+    <!-- Mobile carousel -->
+    <section class="h-80 us:h-96 md:hidden relative overflow-hidden flex items-center justify-center">
+        <!-- Background for carousel -->
+        <div class="absolute w-full h-full z-20 bg-primary"></div>
+        <img class="img-product-carousel-md absolute us:h-full z-20" src="assets/image/image-product-1.jpg"
+            alt="Fall Limited Edition Sneakers">
+        <img class="img-product-carousel-md absolute us:h-full" src="assets/image/image-product-2.jpg"
+            alt="Fall Limited Edition Sneakers">
+        <img class="img-product-carousel-md absolute us:h-full" src="assets/image/image-product-3.jpg"
+            alt="Fall Limited Edition Sneakers">
+        <img class="img-product-carousel-md absolute us:h-full" src="assets/image/image-product-4.jpg"
+            alt="Fall Limited Edition Sneakers">
+        <button
+            class="btn-previous-productCarousel absolute top-1/2 -translate-y-1/2 mx-4 left-0 bg-neutral-white w-10 h-10 flex items-center justify-center rounded-full focus:outline-none hover:text-primary z-30">
+            <svg class="scale-75 -translate-x-0.5" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" />
+            </svg>
+        </button>
+        <button
+            class="btn-next-productCarousel absolute top-1/2 -translate-y-1/2 mx-4 right-0 bg-neutral-white w-10 h-10 flex items-center justify-center rounded-full focus:outline-none hover:text-primary z-30">
+            <svg class="scale-75" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" />
+            </svg>
+        </button>
+    </section>
+    <!-- Main content -->
+    <main class="md:flex md:mx-auto md:my-20 max-w-screen-lg items-center justify-between">
+        <section class="hidden md:flex flex-col gap-6 m-6">
+            <div class="size-96 relative">
+                <!-- Background for carousel -->
+                <div class="absolute w-full h-full z-20 rounded-2xl bg-primary"></div>
+                <img class="rounded-2xl img-product-info absolute z-20" src="assets/image/image-product-1.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-info absolute" src="assets/image/image-product-2.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-info absolute" src="assets/image/image-product-3.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-info absolute" src="assets/image/image-product-4.jpg"
+                    alt="Fall Limited Edition Sneakers">
+            </div>
+            <div class="flex gap-6">
+                <button
+                    class="thumbnail thumbnail-info relative rounded-lg overflow-hidden border-2 border-transparent selected">
+                    <img class="w-20" src="assets/image/image-product-1-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button
+                    class="thumbnail thumbnail-info relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-2-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button
+                    class="thumbnail thumbnail-info relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-3-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button
+                    class="thumbnail thumbnail-info relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-4-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+            </div>
+        </section>
+        <section class="mx-auto px-6 my-6 max-w-md md:mx-6">
+            <div class="text-neutral-1 font-bold uppercase text-sm tracking-wider">Sneaker Company</div>
+            <h1 class="text-neutral-0 font-bold text-3xl my-4 md:text-4xl">Fall Limited Edition Sneakers</h1>
+            <p class="text-neutral-1 text-base mb-2">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a
+                durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <!-- Pricing -->
+            <div class="flex items-center justify-between my-4 ms:flex-col ms:items-start ms:gap-4">
+                <div class="flex items-center gap-4">
+                    <span class="text-neutral-0 font-bold text-3xl">$125.00</span>
+                    <span class="bg-neutral-0 rounded px-[0.6rem] py-0.5 font-bold text-neutral-white">50%</span>
+                </div>
+                <span class="text-neutral-1 font-bold"><del>$250.00</del></span>
+            </div>
+            <div class="ms:flex ms:gap-2 items-center">
+                <!-- Counter -->
+                <div class="w-full flex justify-between items-center my-6 ms:flex-shrink-[1.5]">
+                    <button id="btn-cart-minus"
+                        class="rounded size-12 flex items-center justify-center text-primary hover:text-primary-light">
+                        <!-- Minus -->
+                        <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <path
+                                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                                    id="a" />
+                            </defs>
+                            <use fill="currentColor" fill-rule="nonzero" xlink:href="#a" />
+                        </svg>
+                    </button>
+                    <span id="cart-count" class="font-bold text-neutral-0">0</span>
+                    <button id="btn-cart-plus"
+                        class="rounded size-12 flex items-center justify-center text-primary hover:text-primary-light">
+                        <!-- Plus -->
+                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <path
+                                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                                    id="b" />
+                            </defs>
+                            <use fill="currentColor" fill-rule="nonzero" xlink:href="#b" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Add to Cart -->
+                <button id="btn-cart-add"
+                    class="text-neutral-0 bg-primary font-bold rounded w-full flex items-center h-12 justify-center gap-4 shadow-2xl shadow-primary hover:bg-primary-light">
+                    <svg class="scale-90" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                            fill="currentColor" fill-rule="nonzero" />
+                    </svg>
+                    Add to cart
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <dialog id="dialog-lightbox" class="absolute w-screen h-screen bg-neutral-black top-0 left-0 z-50">
+        <main class="relative top-1/2 -translate-y-1/2 mb-8">
+            <!-- Cross button -->
+            <button id="btn-closeLightBox"
+                class="text-neutral-white w-[30rem] mx-auto flex justify-end py-4 hover:text-primary">
+                <svg class="scale-125" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                        fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </button>
+            <section class="size-[30rem] mx-auto relative flex items-center justify-center">
+                <!-- Background for carousel -->
+                <div class="rounded-2xl absolute w-full h-full z-20 bg-primary"></div>
+                <img class="rounded-2xl img-product-carousel-lg absolute h-full z-20"
+                    src="assets/image/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-carousel-lg absolute h-full" src="assets/image/image-product-2.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-carousel-lg absolute h-full" src="assets/image/image-product-3.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <img class="rounded-2xl img-product-carousel-lg absolute h-full" src="assets/image/image-product-4.jpg"
+                    alt="Fall Limited Edition Sneakers">
+                <button
+                    class="btn-previous-productCarousel absolute top-1/2 -translate-y-1/2 -left-7 bg-neutral-white size-14 flex items-center justify-center rounded-full focus:outline-none hover:text-primary z-30">
+                    <svg class="scale-90 -translate-x-0.5" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1 3 9l8 8" stroke="currentColor" stroke-width="4" fill="none"
+                            fill-rule="evenodd" />
+                    </svg>
+                </button>
+                <button
+                    class="btn-next-productCarousel absolute top-1/2 -translate-y-1/2 -right-7 bg-neutral-white size-14 flex items-center justify-center rounded-full focus:outline-none hover:text-primary z-30">
+                    <svg class="scale-90" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m2 1 8 8-8 8" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" />
+                    </svg>
+                </button>
+            </section>
+            <section class="flex gap-6 justify-center m-8">
+                <button
+                    class="thumbnail thumbnail-lg relative rounded-lg overflow-hidden border-2 border-transparent selected">
+                    <img class="w-20" src="assets/image/image-product-1-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button class="thumbnail thumbnail-lg relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-2-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button class="thumbnail thumbnail-lg relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-3-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+                <button class="thumbnail thumbnail-lg relative rounded-lg overflow-hidden border-2 border-transparent">
+                    <img class="w-20" src="assets/image/image-product-4-thumbnail.jpg"
+                        alt="Fall Limited Edition Sneakers">
+                </button>
+            </section>
+        </main>
+    </dialog>
+</body>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/productCarousel.js"></script>
+<script src="assets/js/cart.js"></script>
+
+</html>

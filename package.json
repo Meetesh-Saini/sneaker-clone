@@ -1,0 +1,11 @@
+{
+  "name": "sneakers",
+  "version": "1.0.0",
+  "description": "A sneakers shop website",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"
+  },
+  "author": "Meetesh Saini",
+  "license": "MIT"
+}
